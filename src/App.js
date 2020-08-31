@@ -7,13 +7,16 @@ import {
 } from "react-router-dom";
 
 import Navigation from "./components/Navigation";
-import PageRenderer from './PageRenderer';
+import PageRenderer from "./PageRenderer";
+import "./assets/scss/base.scss";
+
+const user = { firstName: "Saheed", lastName: "Shittu" };
 
 function App() {
   return (
     <Router>
       <div>
-        <Navigation />
+        <Navigation user={user} />
         <Switch>
           <Route path='/:page' component={PageRenderer} />
           <Route path='/' render={() => <Redirect to='/home' />} />
